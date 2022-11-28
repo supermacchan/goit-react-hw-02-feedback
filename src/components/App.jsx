@@ -11,10 +11,19 @@ export class App extends Component {
     bad: 0,
   };
 
+  handleButtonClick = event => {
+    this.setState((prevState) => {
+      console.log(prevState);
+      return {
+        [event.target.name]: + 1,
+      }
+    })
+  };
+
   render() {
     return (
       <>
-        <FeedbackForm options={FEEDBACK_OPTIONS} />
+        <FeedbackForm options={FEEDBACK_OPTIONS} method={this.handleButtonClick} />
         <Statistics options={FEEDBACK_OPTIONS} values={this.state} />
       </>
     );

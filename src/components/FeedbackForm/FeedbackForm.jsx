@@ -7,6 +7,7 @@ export class FeedbackForm extends Component {
 
     static propTypes = {
         options: PropTypes.arrayOf(PropTypes.string,).isRequired,
+        method: PropTypes.func.isRequired,
     };
 
     render() {
@@ -21,7 +22,9 @@ export class FeedbackForm extends Component {
                                 {/* закинуть рандомайзер ключей */}
                                 <button
                                     type="button"
+                                    name={option}
                                     className={css.feedback__button}
+                                    onClick={this.props.method}
                                 >
                                     {option}
                                 </button>
