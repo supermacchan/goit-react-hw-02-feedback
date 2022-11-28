@@ -6,6 +6,11 @@ export class Statistics extends Component {
 
     static propTypes = {
         options: PropTypes.arrayOf(PropTypes.string,).isRequired,
+        values: PropTypes.exact({
+            good: PropTypes.number.isRequired,
+            neutral: PropTypes.number.isRequired,
+            bad: PropTypes.number.isRequired,
+        }).isRequired,
     };
 
     render() {
@@ -20,8 +25,8 @@ export class Statistics extends Component {
                                 key={this.props.options.indexOf(option)}
                                 className={css.statistics__option}
                             >
-                                {/* закинуть рандомайзер ключей */}
-                                {option}: 
+                                {/* закинуть рандомайзер ключей? */}
+                                {option}: {Object.values(this.props.values)[this.props.options.indexOf(option)]}
                             </li>
                         );
                     })
