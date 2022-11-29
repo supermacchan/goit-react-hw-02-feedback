@@ -13,8 +13,7 @@ export class FeedbackOptions extends Component {
         const { options, onLeaveFeedback } = this.props;
         return (
             <ul className={css.feedback__options}>
-            {
-                options.map(option => {
+                {options.map(option => {
                     return (
                         <li key={options.indexOf(option)}>
                             <button
@@ -27,8 +26,7 @@ export class FeedbackOptions extends Component {
                             </button>
                         </li>
                     );
-                })
-            }
+                })}
             </ul>
         )
     }
