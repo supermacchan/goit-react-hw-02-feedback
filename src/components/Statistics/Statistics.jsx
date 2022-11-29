@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import css from './Statistics.module.css';
 
 export class Statistics extends Component {
-
     static propTypes = {
         options: PropTypes.arrayOf(PropTypes.string,).isRequired,
         values: PropTypes.exact({
@@ -11,6 +10,8 @@ export class Statistics extends Component {
             neutral: PropTypes.number.isRequired,
             bad: PropTypes.number.isRequired,
         }).isRequired,
+        countTotal: PropTypes.func.isRequired,
+        countPositive: PropTypes.func.isRequired,
     };
 
     render() {
@@ -18,7 +19,7 @@ export class Statistics extends Component {
             <section className={css.statistics}>
                 <h2 className={css.statistics__title}>Statistics</h2>
                 <ul className={css.statistics__optionList}>
-                {
+                    {
                     this.props.options.map(option => {
                         return (
                             <li
@@ -30,7 +31,9 @@ export class Statistics extends Component {
                             </li>
                         );
                     })
-                }
+                    }
+                    <li className={css.statistics__option}>Total: {this.props.countTotal()}</li>
+                    <li className={css.statistics__option}>Positive feedback: {this.props.countPositive()}%</li>
                 </ul>
             </section>
         )
