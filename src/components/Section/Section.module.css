@@ -1,8 +1,8 @@
 .section {
     margin-top: 40px;
     margin-left: 20px;
-    padding: 20px 15px;
-    width: 280px;
+    padding: 40px 15px;
+    width: 480px;
     
     border-radius: 3px;
     border: 1px solid darkblue;
@@ -14,8 +14,10 @@
 
 .section__title {
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     
     color: white;
     text-shadow: 2px 2px 2px #250F99;
+
+    font-size: 35px;
 }
